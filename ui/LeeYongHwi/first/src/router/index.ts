@@ -16,6 +16,8 @@ import TensorFlowIrisTestRoutes from '@/tfIris/router/TensorFlowIrisTestRoutes'
 import CartRoutes from '@/cart/router/CartRoutes'
 import PrincipalComponentAnalysisRoutes from '@/principalComponentAnalysis/router/PrincipalComponentAnalysisRoutes'
 import KafkaTestRoutes from '@/kafka/router/KafkaTestRoutes'
+import GatherEverythingRoutes from '@/gatherEverything/router/GatherEverythingRoutes'
+import FileS3TestRoutes from '@/fileS3/router/FileS3TestRoutes'
 
 const routes: Array<RouteRecordRaw> = [
   ...HomeRoutes,
@@ -34,6 +36,8 @@ const routes: Array<RouteRecordRaw> = [
   ...CartRoutes,
   ...PrincipalComponentAnalysisRoutes,
   ...KafkaTestRoutes,
+  ...GatherEverythingRoutes,
+  ...FileS3TestRoutes,
 ]
 
 const router = createRouter({

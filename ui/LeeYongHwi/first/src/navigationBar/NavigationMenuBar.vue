@@ -75,7 +75,7 @@ const authenticationModule = 'authenticationModule'
 export default {
     data () {
         return {
-            isLogin: !!localStorage.getItem("userToken"),
+            // isLogin: !!localStorage.getItem("userToken"),
             items: [
                 { title: 'Logistic Regression', action: () => { router.push('/logistic-regression-result') } },
                 { title: 'Random Forest', action: () => { router.push('/random-forest-result') } },
@@ -126,7 +126,7 @@ export default {
                     item.processed = true;
                 }
 
-                this.$store.state.kafkaTestModule.kafkaTestData = data
+                // this.$store.state.kafkaTestModule.kafkaTestData = data
             }
         },
         isTestItemsProcessed() {
@@ -137,13 +137,13 @@ export default {
         console.log('navigation bar mounted()')
 
         // KAFKA
-        this.socket = new WebSocket('ws://192.168.0.8:33333/ws')
+        // this.socket = new WebSocket('ws://192.168.0.8:33333/ws')
 
-        this.socket.onmessage = (event) => {
-            const data = JSON.parse(event.data)
-            console.log('received data:', data)
-            this.updateProcessingStatus(data)
-        }
+        // this.socket.onmessage = (event) => {
+        //     const data = JSON.parse(event.data)
+        //     console.log('received data:', data)
+        //     this.updateProcessingStatus(data)
+        // }
         
         const userToken = localStorage.getItem("userToken")
         if (userToken) {
@@ -158,7 +158,7 @@ export default {
     },
     beforeUnmount() {
         // WebSocket 연결 해제
-        this.socket.close();
+        // this.socket.close();
     }
 }
 </script>
